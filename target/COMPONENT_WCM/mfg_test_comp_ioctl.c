@@ -1,10 +1,10 @@
 /*
- * Copyright 2020, Cypress Semiconductor Corporation or a subsidiary of
- * Cypress Semiconductor Corporation. All Rights Reserved.
+ * Copyright 2021, Cypress Semiconductor Corporation (an Infineon company) or
+ * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
  *
  * This software, including source code, documentation and related
- * materials ("Software"), is owned by Cypress Semiconductor Corporation
- * or one of its subsidiaries ("Cypress") and is protected by and subject to
+ * materials ("Software") is owned by Cypress Semiconductor Corporation
+ * or one of its affiliates ("Cypress") and is protected by and subject to
  * worldwide patent protection (United States and foreign),
  * United States copyright laws and international treaty provisions.
  * Therefore, you may use this Software only as provided in the license
@@ -13,7 +13,7 @@
  * If no EULA applies, Cypress hereby grants you a personal, non-exclusive,
  * non-transferable license to copy, modify, and compile the Software
  * source code solely for use in connection with Cypress's
- * integrated circuit products. Any reproduction, modification, translation,
+ * integrated circuit products.  Any reproduction, modification, translation,
  * compilation, or representation of this Software except as specified
  * above is prohibited without the express written permission of Cypress.
  *
@@ -40,11 +40,15 @@
  */
 
 /* Wi-Fi Host driver includes. */
+#ifndef MFGTEST_NO_HARDWARE
 #include "whd.h"
 #include "whd_wifi_api.h"
 #include "whd_network_types.h"
 #include "whd_buffer_api.h"
 #include "whd_wlioctl.h"
+#else /* MFGTEST_NO_HARDWARE */
+#include "wifi_mfgtest_stubs.h"
+#endif /* MFGTEST_NO_HARDWARE */
 
 /******************************************************
  *               Function Declarations
@@ -90,7 +94,7 @@ int wl_ioctl( int cmd, void *buf, int len, bool set, int *outlen)
     {
        if  ( ( len <= 4 ) && (set ))
        {
-          if ( len > 0 )
+          if ( ( len > 0 ) && ( buf ) )
           {
             memcpy( &value, buf, len );
           }

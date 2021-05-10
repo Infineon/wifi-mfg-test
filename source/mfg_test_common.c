@@ -1,10 +1,10 @@
 /*
- * Copyright 2020, Cypress Semiconductor Corporation or a subsidiary of
- * Cypress Semiconductor Corporation. All Rights Reserved.
+ * Copyright 2021, Cypress Semiconductor Corporation (an Infineon company) or
+ * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
  *
  * This software, including source code, documentation and related
- * materials ("Software"), is owned by Cypress Semiconductor Corporation
- * or one of its subsidiaries ("Cypress") and is protected by and subject to
+ * materials ("Software") is owned by Cypress Semiconductor Corporation
+ * or one of its affiliates ("Cypress") and is protected by and subject to
  * worldwide patent protection (United States and foreign),
  * United States copyright laws and international treaty provisions.
  * Therefore, you may use this Software only as provided in the license
@@ -13,7 +13,7 @@
  * If no EULA applies, Cypress hereby grants you a personal, non-exclusive,
  * non-transferable license to copy, modify, and compile the Software
  * source code solely for use in connection with Cypress's
- * integrated circuit products. Any reproduction, modification, translation,
+ * integrated circuit products.  Any reproduction, modification, translation,
  * compilation, or representation of this Software except as specified
  * above is prohibited without the express written permission of Cypress.
  *
@@ -42,8 +42,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifndef MFGTEST_NO_HARDWARE
 #include "cyhal.h"
 #include "cybsp.h"
+#else /* MFGTEST_NO_HARDWARE */
+#include "wifi_mfgtest_stubs.h"
+#endif /* MFGTEST_NO_HARDWARE */
 
 #include "mfg_test.h"
 #include "mfg_test_comp_ioctl.h"
@@ -392,6 +396,7 @@ int wl_remote_CDC_tx( uint32_t cmd, unsigned char *buf, uint32_t buf_len, uint32
     if (strlen(g_rem_ifname) != 0)
     {
        strncpy(rem_ptr->intf_name, g_rem_ifname, (int)INTF_NAME_SIZ);
+       rem_ptr->intf_name[INTF_NAME_SIZ - 1] = '\0';
     }
 
     if (data_len > buf_len)
