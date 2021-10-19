@@ -383,7 +383,6 @@ static
 int wl_remote_CDC_tx( uint32_t cmd, unsigned char *buf, uint32_t buf_len, uint32_t data_len, uint32_t flags, int debug)
 {
     unsigned long numwritten = 0;
-    int result = 0;
     rem_ioctl_t *rem_ptr = &rem_cdc;
     int ret;
 
@@ -409,7 +408,7 @@ int wl_remote_CDC_tx( uint32_t cmd, unsigned char *buf, uint32_t buf_len, uint32
     if ((ret = wl_write_serial_data((unsigned char *)rem_ptr, REMOTE_SIZE, &numwritten)) == -1)
     {
         MFG_DPRINT_ERR(ERR, "CDC_Tx: Data: Write failed \r\n");
-        return -1;
+        return ret;
     }
 
     if ( data_len > 0 )
@@ -418,10 +417,10 @@ int wl_remote_CDC_tx( uint32_t cmd, unsigned char *buf, uint32_t buf_len, uint32
        if ((ret = wl_write_serial_data( (unsigned char*)buf, data_len, &numwritten)) == -1)
        {
           MFG_DPRINT_ERR(ERR, "CDC_Tx: Data: Write failed \r\n");
-          return -1;
+          return ret;
        }
     }
-    return result;
+    return 0;
 }
 
 /******************************************************************************

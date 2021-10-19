@@ -64,7 +64,6 @@ cy_rslt_t cywifi_get_ioctl_value( uint32_t ioctl, uint32_t *value);
  *               Variable Definitions
  ******************************************************/
 static whd_interface_t sta_interface;
-static char iovar[2048] = {0};
 
 #ifdef __cplusplus
 extern "C" {
@@ -117,7 +116,6 @@ int wl_ioctl( int cmd, void *buf, int len, bool set, int *outlen)
    else
    {
       token = strtok_r((char *)buf, "'\0'", &saveptr);
-      iovar[strlen(token)] = '\0';
       datalen = len - (strlen(token) + 1);
 
       if ( ( datalen <= 4 ) && ( cmd == WLC_SET_VAR ) )
