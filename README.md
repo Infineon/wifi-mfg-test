@@ -6,6 +6,8 @@ This repo should be used with FreeRTOS and Mbed OS applications to test the wlan
 
 The Mfg Test middleware library consists of the Mfg Test Middleware Porting layer to interface with the wlan firmware and Wi-Fi functionality across SDKs such as FreeRTOS and Mbed OS.
 
+Version 3.2.0 updated the documentation.
+
 Version 3.1.0 updated the documentation and copyright.
 
 Version 3.0.1 adds support for the following:
@@ -19,17 +21,6 @@ Version 3.0.1 adds support for the following:
 - Programming Language: C
 - Supported Toolchains: Arm® GCC, IAR
 - Associated Parts: All [PSoC® 6 MCU](http://www.cypress.com/PSoC6) parts
-
-
-## Validated Kits
-
-- [PSoC 6 Wi-Fi BT Prototyping Kit](https://www.cypress.com/CY8CPROTO-062-4343W) (CY8CPROTO-062-4343W) - Default target
-
-- [PSoC 62S2 Wi-Fi BT Pioneer Kit](https://www.cypress.com/CY8CKIT-062S2-43012) (CY8CKIT-062S2-43012)
-
-- [PSoC 6 WiFi-BT Pioneer Kit](https://www.cypress.com/CY8CKIT-062-WIFI-BT) (CY8CKIT-062-WIFI-BT)
-
-- [PSoC 62S1 WiFi-BT Pioneer Kit](https://www.cypress.com/CYW9P62S1-43438EVB-01) (CYW9P62S1-43438EVB-01)
 
 
 ## Supported Software and Tools

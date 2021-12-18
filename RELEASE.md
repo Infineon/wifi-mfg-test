@@ -3,6 +3,9 @@
 ## What's Included?
 See the [README.md](./README.md) for a complete description of the WiFi mfg-test Middleware for All SDKs.
 
+### v3.2.0
+* Updated the documentation.
+
 ### v3.1.0
 * Updated the documentation and copyright.
 
