@@ -6,6 +6,8 @@ This repo should be used with FreeRTOS and Mbed OS applications to test the wlan
 
 The Mfg Test middleware library consists of the Mfg Test Middleware Porting layer to interface with the wlan firmware and Wi-Fi functionality across SDKs such as FreeRTOS and Mbed OS.
 
+Version 3.3.0 fixed minor compilation warning for ARM compiler.
+
 Version 3.2.0 updated the documentation.
 
 Version 3.1.0 updated the documentation and copyright.

@@ -3,6 +3,9 @@
 ## What's Included?
 See the [README.md](./README.md) for a complete description of the WiFi mfg-test Middleware for All SDKs.
 
+### v3.3.0
+* Fixed minor compilation warning for ARM compiler.
+
 ### v3.2.0
 * Updated the documentation.
 

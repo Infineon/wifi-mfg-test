@@ -1,5 +1,5 @@
 /*
- * Copyright 2021, Cypress Semiconductor Corporation (an Infineon company) or
+ * Copyright 2022, Cypress Semiconductor Corporation (an Infineon company) or
  * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
  *
  * This software, including source code, documentation and related
@@ -49,6 +49,11 @@
 #else /* MFGTEST_NO_HARDWARE */
 #include "wifi_mfgtest_stubs.h"
 #endif /* MFGTEST_NO_HARDWARE */
+
+/******************************************************
+ *               External Function Declarations
+ ******************************************************/
+extern char *strtok_r( char *, const char *, char ** );
 
 /******************************************************
  *               Function Declarations
