@@ -3,6 +3,17 @@
 ## What's Included?
 See the [README.md](./README.md) for a complete description of the WiFi mfg-test Middleware for All SDKs.
 
+### v4.0.0
+* Release new version tested with MTB 3.0 and dependencies.
+
+This version of the library was validated for compatibility with the following software:
+| Software and Tools                                      | Version |
+| :---                                                    | :----:  |
+| ModusToolbox Software Environment                       | 3.0     |
+| GCC Compiler                                            | 10.3.1  |
+| ARMC Compiler                                           | 6.15    |
+| IAR Compiler (only for AnyCloud)                        | 9.30    |
+
 ### v3.3.0
 * Fixed minor compilation warning for ARM compiler.
 
